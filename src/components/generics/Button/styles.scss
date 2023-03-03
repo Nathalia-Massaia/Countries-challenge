@@ -1,0 +1,114 @@
+@import '@/sass/master';
+
+.btn {
+  border: none;
+  border-radius: $rounded;
+  transition: $transition-default;
+  cursor: pointer;
+  @include flexbox(row, center, center);
+  @include shadow(outer);
+
+  &:hover {
+    color: $pure-white;
+  }
+
+  &:disabled {
+    color: $gray;
+    cursor: not-allowed;
+    box-shadow: inset 0.2rem 0.2rem 0.5rem $midgray,
+      inset -0.2rem -0.2rem 0.5rem $pure-white !important;
+    pointer-events: none;
+  }
+
+  // Size
+  &-sm {
+    font-size: $font-xsmall;
+    height: 2rem;
+    min-width: 5rem;
+  }
+
+  &-md {
+    font-size: $font-medium;
+    height: 2.5rem;
+    min-width: 5.5rem;
+  }
+
+  &-lg {
+    font-size: $font-large;
+    height: 3rem;
+    min-width: 8rem;
+  }
+
+  // Type
+  &-primary {
+    background: $green-default;
+    box-shadow: inset 0.2rem 0.2rem 1rem $green-light,
+      inset -0.2rem -0.2rem 1rem $green-dark, 0.3rem 0.3rem 0.6rem $midgray,
+      -0.2rem -0.2rem 0.5rem $pure-white;
+    color: $lightgray;
+
+    &:active {
+      box-shadow: inset 0.2rem 0.2rem 1rem $green-dark,
+        inset -0.2rem -0.2rem 1rem $green-light;
+    }
+  }
+
+  &-warning {
+    background: $orange-default;
+    box-shadow: inset 0.2rem 0.2rem 1rem $orange-light,
+      inset -0.2rem -0.2rem 1rem $orange-dark,
+      0.3rem 0.3rem 0.6rem $orange-light, -0.2rem -0.2rem 0.5rem $pure-white;
+    color: $lightgray;
+
+    &:active {
+      box-shadow: inset 0.2rem 0.2rem 1rem $orange-dark,
+        inset -0.2rem -0.2rem 1rem $orange-light;
+    }
+  }
+
+  &-danger {
+    background: $red-default;
+    box-shadow: inset 0.2rem 0.2rem 1rem $red-light,
+      inset -0.2rem -0.2rem 1rem $red-dark, 0.3rem 0.3rem 0.6rem $red-default,
+      -0.2rem -0.2rem 0.5rem $pure-white;
+    color: $lightgray;
+
+    &:active {
+      box-shadow: inset 0.2rem 0.2rem 1rem $red-dark,
+        inset -0.2rem -0.2rem 1rem $red-light;
+    }
+  }
+
+  &-default {
+    color: $black;
+    @include shadow(outer);
+    background: none;
+    
+    &:active {
+      @include shadow(inner);
+      color: $black;
+    }
+
+    &:hover {
+      color: $green-default;
+    }
+  }
+
+  &-minimal {
+    height: fit-content;
+    width: fit-content;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      background: none;
+      border: none;
+      box-shadow: none !important;
+    }
+  }
+
+  &-fullwidth {
+    width: 100%;
+  }
+}

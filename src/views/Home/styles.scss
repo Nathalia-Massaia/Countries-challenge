@@ -1,0 +1,69 @@
+@import '@/sass/master';
+
+.homeWrapper {
+  height: 100%;
+  padding-top: $space-small;
+  padding: $space-small $space-xxlarge 0;
+  overflow: auto;
+
+  .contentWrapper {
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    @include flexbox(column);
+    
+    .content {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .searchAndSortWrapper {
+    width: 100%;
+    @include flexbox(column, flex-end, center, $space-xxsmall);
+
+    .searchAndSort {
+      width: 100%;
+      @include flexbox(row, center, space-between);
+
+      @include medium-screen {
+        flex-direction: column;
+        gap: $space-xsmall;
+        margin-bottom: $space-small;
+      }
+    }
+
+    .sortWrapper {
+      width: 30rem;
+    }
+
+    .searchWrapper {
+      width: 30rem;
+      margin-top: $space-xxsmall;
+      @include flexbox(column);
+      padding-right: $space-xxsmall;
+      padding-left: $space-xxsmall;
+      gap: $space-tiny;
+ 
+
+      > button {
+        color: $green-default;
+        margin: 0 auto;
+
+        &.active {
+          color: $red-default;
+        }
+      }
+    }
+
+    @include medium-screen {
+      .sortWrapper,
+      .searchWrapper {
+        width: 100%;
+        margin-top: 0;
+        min-width: 20rem;
+        padding: 0;
+      }
+    }
+  }
+}

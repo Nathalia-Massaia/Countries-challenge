@@ -1,0 +1,26 @@
+@import '@/sass/master';
+
+.countryListWrapper {
+  @include flexbox(column);
+  gap: $space-small;
+  width: 100%;
+  margin-top: $space-xxsmall;
+  padding-bottom: $space-xxsmall;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.35rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c9d2;
+    border-radius: 5px;
+  }
+
+  .grid {
+    @include flexbox(row, center, center, $space-small);
+    flex-wrap: wrap;
+  }
+
+}

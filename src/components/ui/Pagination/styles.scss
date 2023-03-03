@@ -1,0 +1,54 @@
+@import '@/sass/master';
+
+.paginationWrapper {
+  width: 100%;
+  margin: 0 $space-xxsmall;
+  padding: $space-tiny 0;
+  @include flexbox(row, center, center, $space-xxsmall);
+
+  @include small-screen {
+    .totalItems {
+      display: none;
+    }
+  }
+
+  .pageWrapper {
+    color: $darkgray;
+    @include flexbox(row, center, center, 0.25rem);
+
+    .paginationItem {
+      width: 2rem;
+      height: 2rem;
+      border-radius: $rounded-full;
+      background-color: $green-default;
+      color: #fff;
+      transition: none;
+
+      &:hover,
+      &:active {
+        background-color: $green-light;
+        border-color: $green-light;
+        color: $green-default;
+      }
+    }
+
+    .ellipsis {
+      pointer-events: none;
+      border: none;
+      color: $darkgray;
+    }
+  }
+
+  > select {
+    background: none;
+    border-radius: $rounded;
+    padding: 0.25rem;
+    cursor: pointer;
+    @include shadow(outer);
+    border-color: $midgray;
+
+    &:focus {
+      @include shadow(inner);
+    }
+  }
+}

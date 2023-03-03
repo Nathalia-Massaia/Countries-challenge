@@ -1,0 +1,74 @@
+@import '@/sass/master';
+
+.filterListWrapper {
+  width: 75%;
+
+  @include large-screen {
+    width: 100%;
+  }
+
+  .filterList {
+    @include flexbox(column, unset, center, $space-xxsmall);
+    width: 100%;
+    transition: $transition-default;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &.visible {
+      max-height: 100%;
+      opacity: 1;
+      padding: $space-xxsmall;
+
+      @include medium-screen {
+        padding: 0;
+      }
+    }
+
+    .filterSelectWrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $space-small;
+
+      @include medium-screen {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include small-screen {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .checkboxAndRadioWrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+
+      @include small-screen {
+        grid-template-columns: 1fr;
+        gap: $space-small;
+      }
+
+      .filterRadioWrapper {
+        width: 20rem;
+        @include flexbox(row, center, unset, $space-small);
+      }
+
+      .filterCheckboxWrapper {
+        @include flexbox(row, center, flex-end, $space-small);
+
+        @include small-screen {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    .actionWrapper {
+      padding: $space-xxsmall 0;
+      width: 50%;
+      min-width: 15rem;
+      margin: 0 auto;
+      @include flexbox(column, center, center, $space-xxsmall);
+    }
+  }
+}

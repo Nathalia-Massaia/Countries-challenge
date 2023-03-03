@@ -1,0 +1,75 @@
+@import '@/sass/master';
+
+.countryListItemWrapper {
+  @include shadow(outer);
+  @include flexbox(column);
+  background-color: $pure-white;
+  border-radius: $rounded;
+  width: 15rem;
+  height: 25rem;
+  position: relative;
+
+  .flagWrapper {
+    position: relative;
+
+    > img {
+      width: 100%;
+      height: 10rem;
+      object-fit: cover;
+      border-top-right-radius: $rounded;
+      border-top-left-radius: $rounded;
+      border-bottom: 1px solid $lightgray;
+    }
+
+    .ribbonWrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+
+      .ribbon {
+        position: relative;
+        background-color: $red-default;
+        color: $pure-white;
+        text-align: center;
+        font-size: $font-small;
+        transform: rotate(-45deg);
+        padding: 0.5rem 0;
+        left: -$space-xlarge;
+        top: $space-large;
+        width: 15rem;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.075rem;
+      }
+    }
+  }
+
+  .infoWrapper {
+    padding: $space-xxsmall;
+    @include flexbox(column, unset, center, 0.5rem);
+    overflow: auto;
+
+    .titleWrapper {
+      font-size: $font-large;
+      font-weight: $font-bold;
+    }
+
+    .detailsWrapper {
+      overflow: auto;
+      @include no-scrollbar;
+      @include flexbox(column);
+      gap: 0.5rem;
+
+      .details {
+        @include flexbox(row);
+        flex-wrap: wrap;
+        gap: 0.25rem;
+
+        > div {
+          @include flexbox(row);
+        }
+      }
+    }
+  }
+}

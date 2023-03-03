@@ -1,0 +1,13 @@
+$rounded: 0.5rem;
+$rounded-full: 100%;
+
+$z-base: 10;
+$z-alwaysOnTop: 50;
+
+$transition-default: 0.3s ease-in-out;
+$transition-fast: 0.1s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+$shadow-outer: 0.3rem 0.3rem 0.6rem $midgray, -0.2rem -0.2rem 0.5rem $pure-white;
+$shadow-inner: inset 0.2rem 0.2rem 0.5rem $midgray,
+  inset -0.2rem -0.2rem 0.5rem $pure-white;

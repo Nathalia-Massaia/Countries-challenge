@@ -1,0 +1,21 @@
+@import '@/sass/master';
+
+.headerWrapper {
+  background-color: $green-dark;
+  color: $white;
+  height: 4rem;
+  padding: 0 4rem;
+  @include flexbox(row, center, flex-start);
+
+  h1 {
+    font-size: $font-xlarge;
+  }
+
+  @include small-screen {
+    height: 3rem;
+
+    h1 {
+      font-size: $font-large;
+    }
+  }
+}

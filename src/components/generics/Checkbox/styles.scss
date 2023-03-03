@@ -1,0 +1,42 @@
+@import '@/sass/master';
+
+.checkboxWrapper {
+  cursor: pointer;
+  @include flexbox(row, center, unset, $space-xxsmall);
+
+  &.checked {
+    color: $green-default;
+  }
+
+  &:hover {
+    color: $green-default;
+  }
+
+  .checkbox {
+    @include flexbox(row, unset, center);
+
+    > input {
+      display: none;
+
+      &:checked {
+        ~ label {
+          @include shadow(inner);
+
+          > svg {
+            color: #00acc2;
+          }
+        }
+      }
+    }
+
+    > label {
+      cursor: pointer;
+      position: relative;
+      border-radius: $rounded;
+      width: 2rem;
+      height: 2rem;
+      @include flexbox(row, center, center);
+      @include shadow(outer);
+    }
+  }
+}

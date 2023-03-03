@@ -1,0 +1,51 @@
+@import '@/sass/master';
+
+.radioWrapper {
+  cursor: pointer;
+
+  .radio {
+    @include flexbox(row, center, unset, $space-xxsmall);
+    > input {
+      display: none;
+
+      &:checked ~ label::after {
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        background: $darkgray;
+        border-radius: $rounded-full;
+        transition: $transition-default;
+        background: $green-default;
+      }
+    }
+
+    > label {
+      position: relative;
+      cursor: pointer;
+      height: 2rem;
+      width: 2rem;
+      border-radius: $rounded-full;
+      @include flexbox(row, center, center);
+      @include shadow(outer);
+
+      &:hover::after{
+        background: $green-default;
+      }
+
+      &.checked {
+        @include shadow(inner);
+      }
+    }
+
+    &.checked {
+      color: $green-default;
+    }
+  }
+
+  &:hover {
+    .radio {
+      color: $green-default;
+    }
+  }
+}

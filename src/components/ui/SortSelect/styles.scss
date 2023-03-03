@@ -1,0 +1,17 @@
+@import '@/sass/master';
+
+.sortSelectWrapper {
+  width: 100%;
+  @include flexbox(column);
+  gap: $space-xxsmall;
+
+  .selectorWrapper{
+    color: $darkgray;
+    @include flexbox(column);
+    gap: $space-tiny;
+  }
+
+  .modifierWrapper{
+    @include flexbox(row, center, space-evenly, $space-small);
+  }
+}
